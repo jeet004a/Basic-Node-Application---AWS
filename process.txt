@@ -1,0 +1,46 @@
+setp 1 
+    run ec2 based on your configuration
+step 2
+    while generating your ec2 instance generate .pem key for future SSH to your computer
+
+step 3
+    connect your ec2 to using SSH or based on your requirement
+
+step 4
+    run - sudo apt-get update // for update every thing in your ubuntu system
+
+step 5
+    then git clone your git repository
+step 6
+    then install node to you ec2 machine
+Step 7
+    sudo apt install curl
+step 8
+    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+Step 9 
+    sudo apt install -y nodejs
+
+Step 10
+    then create a .env file
+Step 11
+    npm i
+Step 12
+    sudo npm i pm2 -g
+Step 13
+    pm2 start src/index.js   (If you change anything your git code base just push your code to git repo then git pull to your ec2 and follow the necesery step and just run -> pm2 restart all)
+Step 14
+    for checing the status 
+        pm2 status
+Step 15 
+    for access your ip go the instance security group and add your node server port to ipv4 and ip6 anywhere
+Step 16
+    use your ip4 ip addess (ip4_address:4000)
+
+Below part is for secure you backend api
+
+Step 17 
+    then create a target group
+Step 18
+    add create a application load balancer based on http port 80
+Step 19
+    Create a colud front distribution and add your load balancer url and alow all headers for access any authorization stuff
